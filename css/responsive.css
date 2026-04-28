@@ -1,0 +1,40 @@
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  /* Nav */
+  nav { padding: 1.4rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Home */
+  .home-hero { grid-template-columns: 1fr; height: auto; }
+  .home-hero-image { height: 60vw; min-height: 300px; }
+  .home-hero-content { padding: 3rem 2rem; }
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Gallery */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); padding: 0 1rem 4rem; }
+
+  /* About */
+  .about-layout { grid-template-columns: 1fr; }
+  .about-image-col { height: 60vw; }
+  .about-content-col { padding: 3rem 2rem; }
+
+  /* Commissions */
+  .commission-process { grid-template-columns: 1fr; }
+  .commission-details { grid-template-columns: 1fr; gap: 2rem; }
+  .patreon-banner { flex-direction: column; text-align: center; }
+
+  /* Contact */
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-left { padding: 3rem 2rem 2rem; }
+  .contact-right { padding: 2rem; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+}
+
+@media (max-width: 540px) {
+  .featured-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}

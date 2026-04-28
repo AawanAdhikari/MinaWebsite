@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Mina Arcy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css"> 
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">Mina Arcy</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html"       onclick="toggleMenu()">Home</a>
+  <a href="works.html"       onclick="toggleMenu()">Works</a>
+  <a href="about.html"       onclick="toggleMenu()">About</a>
+  <a href="commissions.html" onclick="toggleMenu()">Commissions</a>
+  <a href="contact.html"     onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="page-wrap">
+  <div class="contact-layout">
+
+    <div class="contact-left">
+      <p class="section-label">Get in Touch</p>
+      <h1 class="page-title">Contact</h1>
+      <p>Whether you're interested in a commission, a studio visit, or a collaboration — I'd love to hear from you.</p>
+      <ul class="contact-info">
+        <li><strong>Email</strong>     minaaarc@icloud.com</li>
+        <li><strong>Studio</strong>    Hussein dey, Algeria</li>
+        <li><strong>Patreon</strong>   patreon.com/minaarcy</li>
+        <li><strong>Instagram</strong> @loveelyyart</li>
+      </ul>
+    </div>
+
+    <div class="contact-right">
+      <!-- Replace YOUR_FORM_ID with your Formspree ID from formspree.io -->
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="firstName" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastName" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="jane@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select name="subject">
+            <option value="">General Enquiry</option>
+            <option value="commission">Commission Request</option>
+            <option value="purchase">Purchase a Work</option>
+            <option value="exhibition">Exhibition / Collaboration</option>
+            <option value="press">Press</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Tell me about your enquiry…" required></textarea>
+        </div>
+        <p class="form-note">Your message is sent securely via Formspree. I will try to respond within 3 business days.</p>
+        <button type="submit" class="btn btn-solid">Send Message</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>Thank you.</h3>
+        <p>Your message has been received. I'll be in touch soon.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Mina Arcy</span>
+  <ul class="footer-links">
+    <li><a href="works.html">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://patreon.com/minaarcy" target="_blank">Patreon</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Mina Arcy. All rights reserved.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

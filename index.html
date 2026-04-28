@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mina Arcy — Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">Mina Arcy</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html"       onclick="toggleMenu()">Home</a>
+  <a href="works.html"       onclick="toggleMenu()">Works</a>
+  <a href="about.html"       onclick="toggleMenu()">About</a>
+  <a href="commissions.html" onclick="toggleMenu()">Commissions</a>
+  <a href="contact.html"     onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="page-wrap">
+
+<div class="home-hero">
+  <div class="home-hero-image">
+    <img src="images/shadowrider.jpg" alt="Featured work">
+  </div>
+
+  <div class="home-hero-content">
+    <p class="section-label">Acrylic on Canvas</p>
+    <h1 class="home-tagline">Painting fantasy<br><em>portals</em> to the<br>enchanted world.</h1>
+    <p class="home-sub">
+      Original works exploring stillness, light, and the emotional weight of everyday forms. Based in Brisbane, Australia.
+    </p>
+    <a href="works.html" class="btn btn-outline">View Works</a>
+  </div>
+</div>
+<!-- 
+  <div class="home-featured">
+    <p class="section-label" style="text-align:center;">Selected Works</p>
+    <div class="featured-grid">
+      <a class="featured-item" href="works.html">
+        <div class="featured-thumb"><div class="art-placeholder ap1" style="height:100%;"></div></div>
+        <p class="featured-title">Still Life No. 7</p>
+        <p class="featured-meta">Oil on Canvas · 2024</p>
+      </a>
+      <a class="featured-item" href="works.html">
+        <div class="featured-thumb"><div class="art-placeholder ap3" style="height:100%;"></div></div>
+        <p class="featured-title">Interior Light</p>
+        <p class="featured-meta">Acrylic on Board · 2024</p>
+      </a>
+      <a class="featured-item" href="works.html">
+        <div class="featured-thumb"><div class="art-placeholder ap5" style="height:100%;"></div></div>
+        <p class="featured-title">Afternoon, Soft</p>
+        <p class="featured-meta">Oil on Linen · 2023</p>
+      </a>
+    </div>
+  </div>
+-->
+</div>
+
+<footer>
+  <span class="footer-logo">Mina Arcy</span>
+  <ul class="footer-links">
+    <li><a href="works.html">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://patreon.com/minaarcy" target="_blank">Patreon</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 Mina Arcy. All rights reserved.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

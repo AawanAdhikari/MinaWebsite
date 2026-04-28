@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commissions — Mina Arcy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css"> 
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/commissions.css" />
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">Mina Arcy</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html" class="active">Commissions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html"       onclick="toggleMenu()">Home</a>
+  <a href="works.html"       onclick="toggleMenu()">Works</a>
+  <a href="about.html"       onclick="toggleMenu()">About</a>
+  <a href="commissions.html" onclick="toggleMenu()">Commissions</a>
+  <a href="contact.html"     onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="page-wrap">
+  <div class="commissions-layout">
+    <p class="section-label">Work With Me</p>
+    <h1 class="page-title">Commissions</h1>
+    <p class="page-subtitle" style="margin-bottom:4rem;">I accept a small number of commissions each year. Each piece is made with care and full attention.</p>
+
+    <div class="commission-process">
+      <div class="process-step">
+        <span class="step-num">01</span>
+        <p class="step-title">Enquire</p>
+        <p class="step-desc">Send me a message through the contact form describing your vision, size, and timeline. I respond within five business days.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">02</span>
+        <p class="step-title">Proposal</p>
+        <p class="step-desc">I'll send a custom proposal with a sketch, material choices, and pricing. A 30% deposit confirms your commission.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">03</span>
+        <p class="step-title">Delivery</p>
+        <p class="step-desc">Progress photos are shared throughout. On completion, your painting is carefully packed and shipped or available for collection.</p>
+      </div>
+    </div>
+
+    <div class="commission-details">
+      <div class="detail-block">
+        <h3>Sizes &amp; Pricing</h3>
+        <ul>
+          <li>Small (up to 30×30cm)   <span>From $400</span></li>
+          <li>Medium (up to 60×60cm)  <span>From $800</span></li>
+          <li>Large (up to 100×100cm) <span>From $1,500</span></li>
+          <li>Custom dimensions       <span>On request</span></li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <h3>What to Expect</h3>
+        <ul>
+          <li>Turnaround time          <span>4–10 weeks</span></li>
+          <li>Progress updates         <span>Included</span></li>
+          <li>Framing                  <span>Optional</span></li>
+          <li>Shipping (AU)            <span>Included</span></li>
+          <li>Shipping (International) <span>At cost</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="patreon-banner">
+      <div>
+        <h3>Support on Patreon</h3>
+        <!-- Update href to her actual Patreon URL -->
+        <p>Follow the making of new works, get early access to originals, and support the studio through my Patreon. Monthly membership from $5.</p>
+      </div>
+      <a href="https://patreon.com/minaarcy" target="_blank" class="btn btn-solid" style="white-space:nowrap;">Visit Patreon →</a>
+    </div>
+
+    <div style="margin-top:3rem; text-align:center;">
+      <a href="contact.html" class="btn btn-outline">Send a Commission Enquiry</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Mina Arcy</span>
+  <ul class="footer-links">
+    <li><a href="works.html">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://patreon.com/minaarcy" target="_blank">Patreon</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Mina Arcy. All rights reserved.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

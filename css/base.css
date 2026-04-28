@@ -1,0 +1,84 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-main: #1e1f22;        /* deep smoky grey */
+  --bg-soft: #2a2c30;        /* cloudy layer */
+  --bg-elevated: #34373c;    /* cards / sections */
+
+  --text-primary: #e6e6e6;   /* soft white */
+  --text-muted: #a8acb3;     /* foggy grey */
+
+  --accent: #7a818c;         /* steel grey */
+  --accent-soft: #5c616b;    /* darker accent */
+
+  --border: #3a3d42;         /* subtle separation */
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: radial-gradient(circle at 20% 30%, #2a2c30 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, #2f3237 0%, transparent 40%),
+              linear-gradient(180deg, #1e1f22 0%, #232529 100%);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+}
+
+/* ── PAGES ── */
+.page { display: none; padding-top: 80px; min-height: 100vh; animation: fadeIn 0.5s ease; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── SHARED COMPONENTS ── */
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 3.5rem;
+}
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 300;
+  margin-bottom: 0.8rem;
+}
+.page-subtitle {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+}
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2.4rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+}
+.btn-outline:hover { background: var(--charcoal); color: var(--white); }
+.btn-solid { background: var(--charcoal); color: var(--white); }
+.btn-solid:hover { background: var(--accent); }
+
+/* ── ARTWORK PLACEHOLDER COLORS ── */
+.ap1 { background: linear-gradient(160deg, #c9bfb0 0%, #a89880 50%, #7a6b5a 100%); }
+.ap2 { background: linear-gradient(140deg, #d6cfc5 0%, #b8a99a 45%, #8e7d6e 100%); }
+.ap3 { background: linear-gradient(170deg, #e0d8ce 0%, #c4b5a5 50%, #9a8878 100%); }
+.ap4 { background: linear-gradient(135deg, #bfb5a6 0%, #9e9085 50%, #786b5e 100%); }
+.ap5 { background: linear-gradient(155deg, #d3cbbf 0%, #b2a495 45%, #887870 100%); }
+.ap6 { background: linear-gradient(145deg, #ddd5c8 0%, #bfae9e 50%, #957f6f 100%); }

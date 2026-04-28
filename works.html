@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Works — Mina Arcy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css"> 
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/gallery.css"/>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">Mina Arcy</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html" class="active">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html"       onclick="toggleMenu()">Home</a>
+  <a href="works.html"       onclick="toggleMenu()">Works</a>
+  <a href="about.html"       onclick="toggleMenu()">About</a>
+  <a href="commissions.html" onclick="toggleMenu()">Commissions</a>
+  <a href="contact.html"     onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="page-wrap">
+  <div class="gallery-header">
+    <p class="section-label">Portfolio</p>
+    <h1 class="page-title">Selected Works</h1>
+    <p class="page-subtitle">Oil &amp; Acrylic · 2020 — Present</p>
+  </div>
+  <ul class="gallery-filter">
+    <li class="active" onclick="filterGallery('all', this)">All</li>
+    <li onclick="filterGallery('oil', this)">Oil</li>
+    <li onclick="filterGallery('acrylic', this)">Acrylic</li>
+    <li onclick="filterGallery('studies', this)">Studies</li>
+  </ul>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-art art-placeholder" id="lightboxArt"></div>
+    <div class="lightbox-info">
+      <h2 id="lightboxTitle"></h2>
+      <p id="lightboxMeta"></p>
+      <p id="lightboxDesc"></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Mina Arcy</span>
+  <ul class="footer-links">
+    <li><a href="works.html">Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://patreon.com/minaarcy" target="_blank">Patreon</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Mina Arcy. All rights reserved.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

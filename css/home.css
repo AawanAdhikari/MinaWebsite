@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .home-hero-image {
   position: relative;
   overflow: hidden;
@@ -11,11 +12,15 @@
   align-items: center;
   justify-content: center;
 }
+
 .home-hero-content {
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding: 5rem 5rem 5rem 6rem;
 }
+
 .home-tagline {
   font-family: var(--serif);
   font-size: clamp(2.8rem, 4vw, 4.2rem);
@@ -24,7 +29,12 @@
   color: var(--text-primary);
   margin-bottom: 2rem;
 }
-.home-tagline em { font-style: italic; color: var(--accent); }
+
+.home-tagline em {
+  font-style: italic;
+  color: var(--accent);
+}
+
 .home-sub {
   font-size: 0.82rem;
   letter-spacing: 0.08em;
@@ -33,18 +43,23 @@
   max-width: 320px;
   margin-bottom: 3rem;
 }
+
 .home-hero-image img {
-  width: 80%;          /* makes it smaller */
-  max-width: 520px;    /* prevents huge scaling */
+  width: 80%;
+  /* makes it smaller */
+  max-width: 520px;
+  /* prevents huge scaling */
   height: auto;
   object-fit: cover;
   border-radius: 6px;
 }
+
 /* ── HOME FEATURED ── */
 .home-featured {
   padding: 7rem 3rem;
   background: var(--cream);
 }
+
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,21 +67,37 @@
   max-width: 1100px;
   margin: 0 auto;
 }
-.featured-item { cursor: pointer; overflow: hidden; }
+
+.featured-item {
+  cursor: pointer;
+  overflow: hidden;
+}
+
 .featured-thumb {
   aspect-ratio: 3/4;
   overflow: hidden;
   margin-bottom: 1rem;
 }
+
 .featured-thumb .art-placeholder {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   transition: transform 0.5s ease;
 }
-.featured-item:hover .art-placeholder { transform: scale(1.03); }
+
+.featured-item:hover .art-placeholder {
+  transform: scale(1.03);
+}
+
 .featured-title {
   font-family: var(--serif);
   font-size: 1.05rem;
   font-weight: 400;
   margin-bottom: 0.3rem;
 }
-.featured-meta { font-size: 0.7rem; letter-spacing: 0.08em; color: var(--mid); }
+
+.featured-meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--mid);
+}

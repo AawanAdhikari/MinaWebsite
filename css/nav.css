@@ -64,7 +64,6 @@ nav.scrolled {
   right: 25px;
   top: 22px;
   z-index: 10001;
-  background: red;
    transform: translateY(-50%);
 }
 

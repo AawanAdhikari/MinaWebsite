@@ -36,28 +36,34 @@
 }
 
 .home-sub {
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
+  font-size: 1.52rem;
   color: var(--text-muted);
-  line-height: 1.9;
   max-width: 320px;
   margin-bottom: 3rem;
+  font-family: 'Grenze Gotisch', serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
 }
 
 .home-hero-image img {
-  width: 80%;
+  width: 65%;
   /* makes it smaller */
   max-width: 520px;
   /* prevents huge scaling */
   height: auto;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 /* ── HOME FEATURED ── */
 .home-featured {
   padding: 7rem 3rem;
   background: var(--cream);
+}
+.home-location {
+  margin-top: 20px;
+  font-size: 1.52rem;
 }
 
 .featured-grid {

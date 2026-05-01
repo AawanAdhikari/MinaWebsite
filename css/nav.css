@@ -77,8 +77,8 @@ nav.scrolled {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--white);
-  z-index: 99;
+  background: #000;
+  z-index: 9999;
   flex-direction: column;
   align-items: center;
   justify-content: center;

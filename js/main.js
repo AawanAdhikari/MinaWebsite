@@ -12,17 +12,17 @@ function toggleMenu() {
 
 // ── ARTWORK DATA (shared across gallery + lightbox) ──
 const artworks = [
-  { title: 'Still Life No. 7',  meta: 'Oil on Canvas · 60×60cm · 2024',     desc: 'A study in domestic quiet. Objects on a windowsill, caught in late afternoon light.', cls: 'ap1', tag: 'oil' },
-  { title: 'Interior Light',    meta: 'Acrylic on Board · 40×50cm · 2024',   desc: 'The geometry of an empty room. Shadow and warmth in equal measure.',                  cls: 'ap2', tag: 'acrylic' },
-  { title: 'Afternoon, Soft',   meta: 'Oil on Linen · 80×80cm · 2023',       desc: 'Hazy, warm, unhurried. The painting holds a moment that barely lasted.',               cls: 'ap3', tag: 'oil' },
-  { title: 'Vessel Study I',    meta: 'Oil on Canvas · 30×40cm · 2023',      desc: 'A ceramic bowl. Its shadow longer than itself.',                                        cls: 'ap4', tag: 'studies' },
-  { title: 'Morning Room',      meta: 'Acrylic on Canvas · 90×70cm · 2023',  desc: 'Early light across a white wall. Nothing has happened yet.',                          cls: 'ap5', tag: 'acrylic' },
-  { title: 'Vessel Study II',   meta: 'Oil on Board · 30×40cm · 2022',       desc: 'Continuation of the vessel series. A different angle, the same stillness.',             cls: 'ap6', tag: 'studies' },
-  { title: 'Window, East',      meta: 'Oil on Linen · 50×70cm · 2022',       desc: 'The window as a frame within a frame. Light entering, unhurried.',                     cls: 'ap2', tag: 'oil' },
-  { title: 'Pale Ground',       meta: 'Acrylic on Canvas · 100×100cm · 2022',desc: 'Large and spare. A field of warm white with one soft edge of colour.',                cls: 'ap1', tag: 'acrylic' },
+  { title: 'Still Life No. 7', meta: 'Oil on Canvas · 60×60cm · 2024', desc: 'A study in domestic quiet. Objects on a windowsill, caught in late afternoon light.', cls: 'ap1', tag: 'oil' },
+  { title: 'Interior Light', meta: 'Acrylic on Board · 40×50cm · 2024', desc: 'The geometry of an empty room. Shadow and warmth in equal measure.', cls: 'ap2', tag: 'acrylic' },
+  { title: 'Afternoon, Soft', meta: 'Oil on Linen · 80×80cm · 2023', desc: 'Hazy, warm, unhurried. The painting holds a moment that barely lasted.', cls: 'ap3', tag: 'oil' },
+  { title: 'Vessel Study I', meta: 'Oil on Canvas · 30×40cm · 2023', desc: 'A ceramic bowl. Its shadow longer than itself.', cls: 'ap4', tag: 'studies' },
+  { title: 'Morning Room', meta: 'Acrylic on Canvas · 90×70cm · 2023', desc: 'Early light across a white wall. Nothing has happened yet.', cls: 'ap5', tag: 'acrylic' },
+  { title: 'Vessel Study II', meta: 'Oil on Board · 30×40cm · 2022', desc: 'Continuation of the vessel series. A different angle, the same stillness.', cls: 'ap6', tag: 'studies' },
+  { title: 'Window, East', meta: 'Oil on Linen · 50×70cm · 2022', desc: 'The window as a frame within a frame. Light entering, unhurried.', cls: 'ap2', tag: 'oil' },
+  { title: 'Pale Ground', meta: 'Acrylic on Canvas · 100×100cm · 2022', desc: 'Large and spare. A field of warm white with one soft edge of colour.', cls: 'ap1', tag: 'acrylic' },
 ];
 
-const aspectMap = { 0:'3/4', 1:'4/5', 2:'1/1', 3:'3/4', 4:'4/3', 5:'3/4', 6:'5/7', 7:'1/1' };
+const aspectMap = { 0: '3/4', 1: '4/5', 2: '1/1', 3: '3/4', 4: '4/3', 5: '3/4', 6: '5/7', 7: '1/1' };
 
 // ── GALLERY (used on works.html) ──
 function buildGallery(filter) {
@@ -85,12 +85,12 @@ function handleSubmit(e) {
 // ── INIT (runs on any page that needs it) ──
 if (document.getElementById('galleryGrid')) buildGallery('all');
 
-  // Add dark mode toggle (if needed)
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    prefersDarkScheme.addEventListener('change', (e) => {
-        if (e.matches) {
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-        }
-    });
+// Add dark mode toggle (if needed)
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+prefersDarkScheme.addEventListener('change', (e) => {
+  if (e.matches) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
+});

@@ -53,20 +53,27 @@ nav.scrolled {
   color: var(--charcoal);
 }
 
+/* ── Hamburger menu ── */
 .nav-hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
+  position: absolute;
+  right: 25px;
+  top: 22px;
+  z-index: 10001;
+  background: red;
+   transform: translateY(-50%);
 }
 
 .nav-hamburger span {
   display: block;
-  width: 22px;
-  height: 1px;
-  background: var(--charcoal);
-  transition: all 0.3s;
+  width: 26px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
 }
 
 /* ── MOBILE MENU ── */
@@ -93,7 +100,7 @@ nav.scrolled {
   font-family: var(--serif);
   font-size: 2rem;
   font-weight: 300;
-  color: var(--charcoal);
+  color: #ffffff;
   text-decoration: none;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -138,4 +145,14 @@ footer {
 .footer-copy {
   font-size: 0.65rem;
   letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
 }

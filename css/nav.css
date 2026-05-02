@@ -1,3 +1,4 @@
+
 /* ── NAV ── */
 nav {
   position: fixed;
@@ -5,15 +6,13 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
+  height: 70px;                     /* lock height */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.6rem 3rem;
-
+  padding: 0 3rem;                  /* REMOVE vertical padding */
   background: rgba(30, 31, 34, 0.9);
-  /* dark glass */
   backdrop-filter: blur(8px);
-
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
 }
@@ -22,20 +21,23 @@ nav.scrolled {
   border-color: var(--border);
 }
 
-.nav-logo {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 1.35rem;
-  letter-spacing: 0.04em;
-  color: var(--charcoal);
-  cursor: pointer;
-  text-decoration: none;
+.nav-logo { 
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-logo img {
+  max-height: 100px;                /* keep inside navbar */
+  width: auto;
+  display: block;
 }
 
 .nav-links {
   display: flex;
   gap: 2.4rem;
   list-style: none;
+  align-items: center;            /* vertically center links */
 }
 
 .nav-links a {
@@ -52,7 +54,6 @@ nav.scrolled {
 .nav-links a.active {
   color: var(--charcoal);
 }
-
 /* ── Hamburger menu ── */
 .nav-hamburger {
   display: none;
@@ -73,6 +74,9 @@ nav.scrolled {
   height: 2px;
   background: #ffffff;
   border-radius: 2px;
+}
+body {
+  padding-top: 70px;
 }
 
 /* ── MOBILE MENU ── */

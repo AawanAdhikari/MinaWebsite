@@ -12,14 +12,14 @@ function toggleMenu() {
 
 // ── ARTWORK DATA (shared across gallery + lightbox) ──
 const artworks = [
-  { title: 'Still Life No. 7', meta: 'Oil on Canvas · 60×60cm · 2024', desc: 'A study in domestic quiet. Objects on a windowsill, caught in late afternoon light.', cls: 'ap1', tag: 'oil' },
-  { title: 'Interior Light', meta: 'Acrylic on Board · 40×50cm · 2024', desc: 'The geometry of an empty room. Shadow and warmth in equal measure.', cls: 'ap2', tag: 'acrylic' },
-  { title: 'Afternoon, Soft', meta: 'Oil on Linen · 80×80cm · 2023', desc: 'Hazy, warm, unhurried. The painting holds a moment that barely lasted.', cls: 'ap3', tag: 'oil' },
-  { title: 'Vessel Study I', meta: 'Oil on Canvas · 30×40cm · 2023', desc: 'A ceramic bowl. Its shadow longer than itself.', cls: 'ap4', tag: 'studies' },
-  { title: 'Morning Room', meta: 'Acrylic on Canvas · 90×70cm · 2023', desc: 'Early light across a white wall. Nothing has happened yet.', cls: 'ap5', tag: 'acrylic' },
-  { title: 'Vessel Study II', meta: 'Oil on Board · 30×40cm · 2022', desc: 'Continuation of the vessel series. A different angle, the same stillness.', cls: 'ap6', tag: 'studies' },
-  { title: 'Window, East', meta: 'Oil on Linen · 50×70cm · 2022', desc: 'The window as a frame within a frame. Light entering, unhurried.', cls: 'ap2', tag: 'oil' },
-  { title: 'Pale Ground', meta: 'Acrylic on Canvas · 100×100cm · 2022', desc: 'Large and spare. A field of warm white with one soft edge of colour.', cls: 'ap1', tag: 'acrylic' },
+  {
+    title: "Grim Flight",
+    image: "images/GF1.jpg",
+    year: "2024",
+    medium: "Acrylic on canvas",
+    textColor: "black",
+    description: "<em>When you can't ride dragons, you paint this instead<em>. This painting was inspired by Game of Thrones. "
+  }
 ];
 
 const aspectMap = { 0: '3/4', 1: '4/5', 2: '1/1', 3: '3/4', 4: '4/3', 5: '3/4', 6: '5/7', 7: '1/1' };
@@ -28,21 +28,26 @@ const aspectMap = { 0: '3/4', 1: '4/5', 2: '1/1', 3: '3/4', 4: '4/3', 5: '3/4', 
 function buildGallery(filter) {
   const grid = document.getElementById('galleryGrid');
   if (!grid) return;
+
   grid.innerHTML = '';
-  const items = filter === 'all' ? artworks : artworks.filter(a => a.tag === filter);
-  items.forEach(a => {
-    const idx = artworks.indexOf(a);
+
+  artworks.forEach((a, idx) => {
     const el = document.createElement('div');
     el.className = 'gallery-item';
+
     el.innerHTML = `
-      <div class="art-placeholder ${a.cls}" style="aspect-ratio:${aspectMap[idx] || '3/4'}"></div>
+      <img src="${a.image}" alt="${a.title}" class="gallery-image">
+
       <div class="overlay">
-        <div class="overlay-text">
+      <div class="overlay-text" style="color:${a.textColor || 'white'}">
           <span class="overlay-title">${a.title}</span>
-          <span class="overlay-info">${a.meta.split('·')[0].trim()}</span>
+          <span class="overlay-info">${a.year}</span>
         </div>
-      </div>`;
+      </div>
+    `;
+
     el.onclick = () => openLightbox(idx);
+
     grid.appendChild(el);
   });
 }
@@ -56,11 +61,18 @@ function filterGallery(tag, el) {
 // ── LIGHTBOX ──
 function openLightbox(idx) {
   const a = artworks[idx];
-  document.getElementById('lightboxArt').className = 'lightbox-art art-placeholder ' + a.cls;
+
+  document.getElementById('lightboxArt').innerHTML =
+    `<img src="${a.image}" alt="${a.title}" class="lightbox-image">`;
+
   document.getElementById('lightboxTitle').textContent = a.title;
-  document.getElementById('lightboxMeta').textContent = a.meta;
-  document.getElementById('lightboxDesc').textContent = a.desc;
+  document.getElementById('lightboxMeta').textContent =
+    `${a.medium} · ${a.year}`;
+
+  document.getElementById('lightboxDesc').innerHTML = a.description;
+
   document.getElementById('lightbox').classList.add('open');
+
   document.body.style.overflow = 'hidden';
 }
 

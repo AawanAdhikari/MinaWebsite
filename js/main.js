@@ -14,7 +14,10 @@ function toggleMenu() {
 const artworks = [
   {
    title: "Luminous Flight",
-   image: "images/luminousframe1.jpg",
+   images: [
+    "images/luminousflight/luminousframe1.jpg",
+    "images/luminousflight/luminousflight.jpg",
+     ],
    year: "2026",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -23,7 +26,10 @@ const artworks = [
 
  {
    title: "Shadowrider",
-   image: "images/shadowriderframe1.jpg",
+   images: [
+    "images/Shadowrider/shadowriderframe1.jpg",
+    "images/Shadowrider/shadowrider.jpg",
+     ],
    year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -33,7 +39,11 @@ const artworks = [
 
   {
     title: "Grim Flight",
-    image: "images/GF1.jpg",
+     images: [
+    "images/Grimflight/GF1.jpg",
+    "images/Grimflight/GF2.jpg",
+    "images/Grimflight/GF3.jpg"
+     ],
     year: "2024",
     medium: "Acrylic on canvas",
     textColor: "white",
@@ -42,7 +52,7 @@ const artworks = [
 
     {
    title: "The High Witch and Her Ride",
-   image: "images/highwitchframe1.jpg",
+   images: "images/highwitchframe1.jpg",
    year: "2026",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -51,7 +61,7 @@ const artworks = [
 
     {
    title: "The Crossing",
-   image: "images/oracleframe1.jpg",
+   images: "images/oracleframe1.jpg",
    year: "2026",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -60,7 +70,7 @@ const artworks = [
 
   {
    title: "The Woven Arcana",
-   image: "images/WovenArcana.jpg",
+   images: "images/WovenArcana.jpg",
    year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -69,7 +79,7 @@ const artworks = [
 
    {
    title: "The dream of a better world",
-   image: "images/dreamofbetterworld.png",
+   images: "images/dreamofbetterworld.png",
    year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -78,7 +88,7 @@ const artworks = [
 
     {
    title: "The Whispers of the North",
-   image: "images/whispers.jpg",
+   images: "images/whispers.jpg",
    year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -99,15 +109,20 @@ function buildGallery(filter) {
     const el = document.createElement('div');
     el.className = 'gallery-item';
 
+    const displayImage = Array.isArray(a.images)
+      ? a.images[0]
+      : a.images;
+
     el.innerHTML = `
-    <img 
-  src="${a.image}" 
-  alt="${a.title}" 
-  class="gallery-image"
-  style="object-fit:${a.imageFit || 'cover'}"
->
+      <img 
+        src="${displayImage}" 
+        alt="${a.title}" 
+        class="gallery-image"
+        style="object-fit:${a.imageFit || 'cover'}"
+      >
+
       <div class="overlay">
-      <div class="overlay-text" style="color:${a.textColor || 'white'}">
+        <div class="overlay-text" style="color:${a.textColor || 'white'}">
           <span class="overlay-title">${a.title}</span>
           <span class="overlay-info">${a.year}</span>
         </div>
@@ -129,11 +144,22 @@ function filterGallery(tag, el) {
 // ── LIGHTBOX ──
 function openLightbox(idx) {
   const a = artworks[idx];
+ const displayImage = Array.isArray(a.images)
+    ? a.images[0]
+    : a.images;
 
+if (Array.isArray(a.images)) {
   document.getElementById('lightboxArt').innerHTML =
-    `<img src="${a.image}" alt="${a.title}" class="lightbox-image">`;
+    a.images.map(img => `
+      <img src="${img}" alt="${a.title}" class="lightbox-image">
+    `).join('');
+} else {
+  document.getElementById('lightboxArt').innerHTML =
+    `<img src="${a.images}" alt="${a.title}" class="lightbox-image">`;
+}
 
   document.getElementById('lightboxTitle').textContent = a.title;
+
   document.getElementById('lightboxMeta').textContent =
     `${a.medium} · ${a.year}`;
 

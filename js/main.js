@@ -141,22 +141,20 @@ function filterGallery(tag, el) {
   buildGallery(tag);
 }
 
+let currentArtworkIndex = 0;
+let currentImageIndex = 0;
 // ── LIGHTBOX ──
 function openLightbox(idx) {
   const a = artworks[idx];
- const displayImage = Array.isArray(a.images)
-    ? a.images[0]
-    : a.images;
+ currentArtworkIndex = idx;
+currentImageIndex = 0;
 
-if (Array.isArray(a.images)) {
-  document.getElementById('lightboxArt').innerHTML =
-    a.images.map(img => `
-      <img src="${img}" alt="${a.title}" class="lightbox-image">
-    `).join('');
-} else {
-  document.getElementById('lightboxArt').innerHTML =
-    `<img src="${a.images}" alt="${a.title}" class="lightbox-image">`;
-}
+const firstImage = Array.isArray(a.images)
+  ? a.images[0]
+  : a.images;
+
+document.getElementById('lightboxArt').innerHTML =
+  `<img src="${firstImage}" alt="${a.title}" class="lightbox-image">`;
 
   document.getElementById('lightboxTitle').textContent = a.title;
 
@@ -169,7 +167,26 @@ if (Array.isArray(a.images)) {
 
   document.body.style.overflow = 'hidden';
 }
+function changeImage(direction) {
+  const artwork = artworks[currentArtworkIndex];
 
+  if (!Array.isArray(artwork.images)) return;
+
+  currentImageIndex += direction;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = artwork.images.length - 1;
+  }
+
+  if (currentImageIndex >= artwork.images.length) {
+    currentImageIndex = 0;
+  }
+
+  document.getElementById('lightboxArt').innerHTML =
+    `<img src="${artwork.images[currentImageIndex]}" 
+    alt="${artwork.title}" 
+    class="lightbox-image">`;
+}
 function closeLightbox(e) {
   if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
     document.getElementById('lightbox').classList.remove('open');

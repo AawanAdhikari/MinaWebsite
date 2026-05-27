@@ -7,26 +7,13 @@
 }
 
 :root {
-  --bg-main: #1e1f22;
-  /* deep smoky grey */
-  --bg-soft: #2a2c30;
-  /* cloudy layer */
-  --bg-elevated: #34373c;
-  /* cards / sections */
-
+  --bg-main: #000000;
+  
   --text-primary: #e6e6e6;
-  /* soft white */
   --text-muted: #a8acb3;
-  /* foggy grey */
-
   --accent: #7a818c;
-  /* steel grey */
   --accent-soft: #5c616b;
-  /* darker accent */
-
-  --border: #3a3d42;
-  /* subtle separation */
-
+  --border: #000000;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Jost', sans-serif;
 }
@@ -36,9 +23,9 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at 20% 30%, #2a2c30 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, #2f3237 0%, transparent 40%),
-    linear-gradient(180deg, #1e1f22 0%, #232529 100%);
+  background: radial-gradient(circle at 20% 30%, #000000 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, #000000 0%, transparent 40%),
+    linear-gradient(180deg, #000000 0%, #000000 100%);
   color: var(--text-primary);
   font-family: var(--sans);
   font-weight: 300;

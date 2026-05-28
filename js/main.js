@@ -12,37 +12,41 @@ function toggleMenu() {
 
 // ── ARTWORK DATA (shared across gallery + lightbox) ──
 const artworks = [
-   {
-    title: "Grim Flight",
-     images: [
-    "images/Grimflight/Gf1.jpg",
-    "images/Grimflight/Gf2.jpg"
-     ],
-    year: "2024",
-    medium: "Acrylic on canvas",
-    textColor: "white",
-    description: "<em>When you can't ride dragons, you paint it instead<em>. This painting was inspired by Game of Thrones."
-  },
-
- {
-   title: "The Whispers of the North",
-   images: [
-    "images/Whispers/Whispers1.jpg",
-    "images/Whispers/Whispers2.jpg"
-   ],
-   year: "2025",
+  {
+   title: "The Crossing",
+   images: "images/oracle1.png",
+   year: "2026",
    medium: "Acrylic on canvas",
    textColor: "white",
-    description: "This painting is about a folklore with nymphs"
+    description: "This painting is about a lady going in the gate."
    },
 
    {
-   title: "The Woven Arcana",
+   title: "The High Witch and Her Ride",
    images: [
-    "images/WovenArcana/WA1.jpg",
-    "images/WovenArcana/WA2.jpg",
-    "images/WovenArcana/WA3.jpg"
+    "images/THWR/THWAHR1.jpg",
+    "images/THWR/THWAHR2.jpg"
    ],
+   year: "2026",
+   medium: "Acrylic on canvas",
+   textColor: "white",
+    description: "This painting is about the witch and her dragons."
+   },
+
+    {
+   title: "Luminous Flight",
+   images: [
+    "images/luminousflight/Luminousflight1.jpg"
+     ],
+   year: "2026",
+   medium: "Acrylic on canvas",
+   textColor: "white",
+    description: "This painting is about escapisim."
+   },
+
+   {
+   title: "The dream of a better world",
+   images: "images/Dotbw1.jpg",
    year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -63,8 +67,12 @@ const artworks = [
    },
 
    {
-   title: "The dream of a better world",
-   images: "images/Dotbw1.jpg",
+   title: "The Woven Arcana",
+   images: [
+    "images/WovenArcana/WA1.jpg",
+    "images/WovenArcana/WA2.jpg",
+    "images/WovenArcana/WA3.jpg"
+   ],
    year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
@@ -72,36 +80,28 @@ const artworks = [
    },
 
    {
-   title: "Luminous Flight",
+   title: "The Whispers of the North",
    images: [
-    "images/luminousflight/Luminousflight1.jpg"
-     ],
-   year: "2026",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about escapisim."
-   },
-   
-   {
-   title: "The High Witch and Her Ride",
-   images: [
-    "images/THWR/THWAHR1.jpg",
-    "images/THWR/THWAHR2.jpg"
+    "images/Whispers/Whispers1.jpg",
+    "images/Whispers/Whispers2.jpg"
    ],
-   year: "2026",
+   year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
-    description: "This painting is about the witch and her dragons."
+    description: "This painting is about a folklore with nymphs"
    },
 
-    {
-   title: "The Crossing",
-   images: "images/oracle1.png",
-   year: "2026",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a lady going in the gate."
-   },
+   {
+    title: "Grim Flight",
+     images: [
+    "images/Grimflight/Gf1.jpg",
+    "images/Grimflight/Gf2.jpg"
+     ],
+    year: "2024",
+    medium: "Acrylic on canvas",
+    textColor: "white",
+    description: "<em>When you can't ride dragons, you paint it instead<em>. This painting was inspired by Game of Thrones."
+  },
    
 ];
 

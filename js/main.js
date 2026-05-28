@@ -24,18 +24,32 @@ const artworks = [
     description: "<em>When you can't ride dragons, you paint it instead<em>. This painting was inspired by Game of Thrones."
   },
 
-  {
-   title: "Luminous Flight",
+ {
+   title: "The Whispers of the North",
    images: [
-    "images/luminousflight/Luminousflight1.jpg"
-     ],
-   year: "2026",
+    "images/Whispers/Whispers1.jpg",
+    "images/Whispers/Whispers2.jpg"
+   ],
+   year: "2025",
    medium: "Acrylic on canvas",
    textColor: "white",
-    description: "This painting is about escapisim."
+    description: "This painting is about a folklore with nymphs"
    },
 
- {
+   {
+   title: "The Woven Arcana",
+   images: [
+    "images/WovenArcana/WA1.jpg",
+    "images/WovenArcana/WA2.jpg",
+    "images/WovenArcana/WA3.jpg"
+   ],
+   year: "2025",
+   medium: "Acrylic on canvas",
+   textColor: "white",
+    description: "This painting is about a book."
+   },
+
+   {
    title: "Shadowrider",
    images: [
     "images/Shadowrider/Shadowrider1.jpg",
@@ -48,7 +62,27 @@ const artworks = [
    description: "This painting is about dragons."
    },
 
-    {
+   {
+   title: "The dream of a better world",
+   images: "images/Dotbw1.jpg",
+   year: "2025",
+   medium: "Acrylic on canvas",
+   textColor: "white",
+    description: "This painting is about a book."
+   },
+
+   {
+   title: "Luminous Flight",
+   images: [
+    "images/luminousflight/Luminousflight1.jpg"
+     ],
+   year: "2026",
+   medium: "Acrylic on canvas",
+   textColor: "white",
+    description: "This painting is about escapisim."
+   },
+   
+   {
    title: "The High Witch and Her Ride",
    images: [
     "images/THWR/THWAHR1.jpg",
@@ -68,40 +102,7 @@ const artworks = [
    textColor: "white",
     description: "This painting is about a lady going in the gate."
    },
-
-  {
-   title: "The Woven Arcana",
-   images: [
-    "images/WovenArcana/WA1.jpg",
-    "images/WovenArcana/WA2.jpg",
-    "images/WovenArcana/WA3.jpg"
-   ],
-   year: "2025",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a book."
-   },
-
-   {
-   title: "The dream of a better world",
-   images: "images/Dotbw1.jpg",
-   year: "2025",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a book."
-   },
-
-    {
-   title: "The Whispers of the North",
-   images: [
-    "images/Whispers/Whispers1.jpg",
-    "images/Whispers/Whispers2.jpg"
-   ],
-   year: "2025",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a folklore with nymphs"
-   },
+   
 ];
 
 const aspectMap = { 0: '3/4', 1: '4/5', 2: '1/1', 3: '3/4', 4: '4/3', 5: '3/4', 6: '5/7', 7: '1/1' };

@@ -14,7 +14,7 @@ function toggleMenu() {
 const artworks = [
   {
    title: "The Crossing",
-   images: "images/oracle1.png",
+   images: "images/oracle1.jpg",
    year: "2026",
    medium: "Acrylic on canvas",
    textColor: "white",

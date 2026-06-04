@@ -32,17 +32,32 @@ const artworks = [
    textColor: "white",
     description: "This painting is about the witch and her dragons."
    },
-
-    {
-   title: "Luminous Flight",
-   images: [
+{
+  title: "Luminous Flight",
+  images: [
     "images/luminousflight/Luminousflight1.jpg"
-     ],
-   year: "2026",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about escapisim."
-   },
+  ],
+  year: "2026",
+  medium: "25x30cm Acrylic on canvas",
+  textColor: "white",
+  description: `
+    <p><strong>Price:</strong> $450 AUD</p>
+
+    <p>Born from the idea of peace and escapism, <em>Luminous Flight</em> is a magical dreamscape and one-of-a-kind inspired artwork that transforms your space into a sanctuary of light and serenity.</p>
+
+    <h4>Shipping & Packaging</h4>
+
+    <p>The painting is carefully varnished to ensure longevity and comes with a signed Certificate of Authenticity. It is shipped worldwide via a professional express courier service, with a tracking number sent directly to your email.</p>
+
+    <p>If this piece speaks to you and you'd like to make it yours, I'd love to hear from you.</p>
+
+    <p>
+      <a href="contact.html" class="btn btn-outline">
+        Contact me
+      </a>
+    </p>
+  `
+},
 
    {
    title: "The dream of a better world",

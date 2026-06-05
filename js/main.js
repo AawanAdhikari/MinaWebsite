@@ -10,116 +10,21 @@ function toggleMenu() {
   document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
 }
 
-// ── ARTWORK DATA (shared across gallery + lightbox) ──
-const artworks = [
-  {
-   title: "The Crossing",
-   images: "images/oracle1.jpg",
-   year: "2026",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a lady going in the gate."
-   },
+let artworks = [];
 
-   {
-   title: "The High Witch and Her Ride",
-   images: [
-    "images/THWR/THWAHR1.jpg",
-    "images/THWR/THWAHR2.jpg"
-   ],
-   year: "2026",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about the witch and her dragons."
-   },
-{
-  title: "Luminous Flight",
-  images: [
-    "images/luminousflight/Luminousflight1.jpg"
-  ],
-  year: "2026",
-  medium: "25x30cm Acrylic on canvas",
-  textColor: "white",
-  description: `
-    <p><strong>Price:</strong> $450 AUD</p>
+fetch("artworks.json")
+  .then(response => response.json())
+  .then(data => {
+    artworks = data;
+    console.log(artworks);
 
-    <p>Born from the idea of peace and escapism, <em>Luminous Flight</em> is a magical dreamscape and one-of-a-kind inspired artwork that transforms your space into a sanctuary of light and serenity.</p>
-
-    <h4>Shipping & Packaging</h4>
-
-    <p>The painting is carefully varnished to ensure longevity and comes with a signed Certificate of Authenticity. It is shipped worldwide via a professional express courier service, with a tracking number sent directly to your email.</p>
-
-    <p>If this piece speaks to you and you'd like to make it yours, I'd love to hear from you.</p>
-
-    <p>
-      <a href="contact.html" class="btn btn-outline">
-        Contact me
-      </a>
-    </p>
-  `
-},
-
-   {
-   title: "The dream of a better world",
-   images: "images/Dotbw1.jpg",
-   year: "2025",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a book."
-   },
-
-   {
-   title: "Shadowrider",
-   images: [
-    "images/Shadowrider/Shadowrider1.jpg",
-    "images/Shadowrider/Shadowrider2.jpg",
-     ],
-   year: "2025",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-   imageFit: "contain",
-   description: "This painting is about dragons."
-   },
-
-   {
-   title: "The Woven Arcana",
-   images: [
-    "images/WovenArcana/WA1.jpg",
-    "images/WovenArcana/WA2.jpg",
-    "images/WovenArcana/WA3.jpg"
-   ],
-   year: "2025",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a book."
-   },
-
-   {
-   title: "The Whispers of the North",
-   images: [
-    "images/Whispers/Whispers1.jpg",
-    "images/Whispers/Whispers2.jpg"
-   ],
-   year: "2025",
-   medium: "Acrylic on canvas",
-   textColor: "white",
-    description: "This painting is about a folklore with nymphs"
-   },
-
-   {
-    title: "Grim Flight",
-     images: [
-    "images/Grimflight/Gf1.jpg",
-    "images/Grimflight/Gf2.jpg"
-     ],
-    year: "2024",
-    medium: "Acrylic on canvas",
-    textColor: "white",
-    description: "<em>When you can't ride dragons, you paint it instead<em>. This painting was inspired by Game of Thrones."
-  },
-   
-];
-
+    if (document.getElementById('galleryGrid')) {
+      buildGallery('all');
+    }
+  })
+  .catch(error => {
+    console.error("Error loading artworks:", error);
+  });
 const aspectMap = { 0: '3/4', 1: '4/5', 2: '1/1', 3: '3/4', 4: '4/3', 5: '3/4', 6: '5/7', 7: '1/1' };
 
 // ── GALLERY (used on works.html) ──
@@ -228,7 +133,4 @@ function handleSubmit(e) {
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
-
-// ── runs on any page that needs it ──
-if (document.getElementById('galleryGrid')) buildGallery('all');
 

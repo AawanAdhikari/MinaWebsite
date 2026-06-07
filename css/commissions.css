@@ -128,3 +128,60 @@
   line-height: 1.7;
   color: var(--mid);
 }
+.commission-form-wrap{
+  max-width:700px;
+  margin:4rem auto 0;
+  padding:2rem;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.commission-form-wrap h2{
+  margin-bottom:1rem;
+}
+
+.commission-form-wrap p{
+  margin-bottom:2rem;
+}
+
+.commission-form-wrap .form-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:1.5rem;
+}
+
+.commission-form-wrap label{
+  margin-bottom:.5rem;
+  font-size:.9rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.commission-form-wrap input,
+.commission-form-wrap textarea,
+.commission-form-wrap select{
+  width:100%;
+  padding:1rem;
+  border:1px solid rgba(255,255,255,.15);
+  background:transparent;
+  color:inherit;
+  font:inherit;
+}
+
+.commission-form-wrap textarea{
+  resize:vertical;
+  min-height:140px;
+}
+
+.commission-form-wrap input[type="file"]{
+  padding:.75rem;
+}
+
+.commission-form-wrap button{
+  width:100%;
+}
+
+#commissionSuccess{
+  display:none;
+  text-align:center;
+  padding:2rem;
+}

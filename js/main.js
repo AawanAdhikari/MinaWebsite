@@ -127,10 +127,41 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') });
 });
 
-// ── CONTACT FORM ──
+// CONTACT FORM --
 function handleSubmit(e) {
   e.preventDefault();
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
+//-- commision waitlist --
+const commissionForm = document.getElementById("commissionForm");
+const commissionSuccess = document.getElementById("commissionSuccess");
 
+if (commissionForm) {
+  commissionForm.addEventListener("submit", async function (e) {
+
+  if (!commissionForm.checkValidity()) {
+    commissionForm.reportValidity();
+    return;
+  }
+
+  e.preventDefault();
+
+  const data = new FormData(commissionForm);
+
+  const response = await fetch(commissionForm.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      Accept: "application/json"
+    }
+  });
+
+  if (response.ok) {
+    commissionForm.style.display = "none";
+    commissionSuccess.style.display = "block";
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+});
+}

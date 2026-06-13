@@ -101,30 +101,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-@media (max-width: 900px) {
-
-  .commission-process {
-    gap: 1rem;
-  }
-
-  .process-step {
-    padding: 1.5rem;
-  }
-
-  .step-num {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .step-title {
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .step-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-}

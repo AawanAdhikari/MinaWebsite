@@ -98,3 +98,24 @@
   min-width: 48px;
   letter-spacing: 0.06em;
 }
+
+@media (max-width: 768px) {
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content-col {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-bio {
+    max-width: 100%;
+  }
+
+  .about-image-col {
+    margin: 100px auto 0;
+    max-width: 300px;
+  }
+
+}

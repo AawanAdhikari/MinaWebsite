@@ -126,3 +126,21 @@ resize: none;
   font-size: 0.82rem;
   color: var(--mid);
 }
+
+@media (max-width: 768px) {
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 3rem 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+}

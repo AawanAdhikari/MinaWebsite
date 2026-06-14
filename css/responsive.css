@@ -101,3 +101,40 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 900px) {
+
+  .commission-process {
+    display: block;
+    margin-bottom: 3rem;
+  }
+
+  .process-step {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .process-step:last-child {
+    margin-bottom: 0;
+  }
+
+  .step-num {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-title {
+    font-size: 1.1rem;
+    letter-spacing: normal;
+    text-transform: none;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+}

@@ -224,14 +224,23 @@
 
 }
 
-@media (max-width: 768px) {
+
+  @media (max-width: 768px) {
+
+  .lightbox {
+    overflow-y: auto;
+    padding: 2rem 0;
+  }
 
   .lightbox-inner {
     flex-direction: column;
     max-width: 95vw;
-    max-height: 95vh;
+    max-height: none;
     gap: 1rem;
+    margin: auto;
   }
+
+}
 
   .lightbox-art {
     width: 100%;
@@ -253,5 +262,3 @@
   .lightbox-arrow.right {
     right: 0.5rem;
   }
-
-}

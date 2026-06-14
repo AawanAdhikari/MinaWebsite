@@ -185,3 +185,16 @@
   text-align:center;
   padding:2rem;
 }
+
+@media (max-width: 768px) {
+
+  .commission-process {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .process-step {
+    padding: 2rem 1.5rem;
+  }
+
+}

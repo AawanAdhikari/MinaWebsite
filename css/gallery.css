@@ -223,3 +223,35 @@
   }
 
 }
+
+@media (max-width: 768px) {
+
+  .lightbox-inner {
+    flex-direction: column;
+    max-width: 95vw;
+    max-height: 95vh;
+    gap: 1rem;
+  }
+
+  .lightbox-art {
+    width: 100%;
+  }
+
+  .lightbox-image {
+    max-height: 55vh;
+  }
+
+  .lightbox-info {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .lightbox-arrow.left {
+    left: 0.5rem;
+  }
+
+  .lightbox-arrow.right {
+    right: 0.5rem;
+  }
+
+}

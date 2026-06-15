@@ -206,14 +206,7 @@
   right: -4rem;
 }
 
-
-
-
-
- 
-
-
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
 
   .lightbox {
     overflow-y: auto;
@@ -227,20 +220,6 @@
     gap: 1rem;
     margin: auto;
   }
- .lightbox-close {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 999;
-  }
-  
- .lightbox-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-  }
-
-}
 
   .lightbox-art {
     width: 100%;
@@ -255,6 +234,19 @@
     text-align: center;
   }
 
+  .lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+
+  .lightbox-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
   .lightbox-arrow.left {
     left: 0.5rem;
   }
@@ -262,3 +254,5 @@
   .lightbox-arrow.right {
     right: 0.5rem;
   }
+
+}

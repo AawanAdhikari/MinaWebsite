@@ -12,6 +12,14 @@ function toggleMenu() {
 
 let artworks = [];
 
+function createSlug(title) {
+  return title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 fetch("artworks.json")
   .then(response => response.json())
   .then(data => {
@@ -21,6 +29,7 @@ fetch("artworks.json")
     if (document.getElementById('galleryGrid')) {
       buildGallery('all');
     }
+    openArtworkFromURL();
   })
   .catch(error => {
     console.error("Error loading artworks:", error);
@@ -58,7 +67,10 @@ function buildGallery(filter) {
       </div>
     `;
 
-    el.onclick = () => openLightbox(idx);
+   el.onclick = () => {
+  openLightbox(idx);
+  history.replaceState(null, '', `#${createSlug(a.title)}`);
+};
 
     grid.appendChild(el);
   });
@@ -72,18 +84,29 @@ function filterGallery(tag, el) {
 
 let currentArtworkIndex = 0;
 let currentImageIndex = 0;
+
+// Create a URL-friendly name from the artwork title
+function createArtworkSlug(title) {
+  return title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-');
+}
+
 // ── LIGHTBOX ──
-function openLightbox(idx) {
+function openLightbox(idx, updateURL = true) {
   const a = artworks[idx];
- currentArtworkIndex = idx;
-currentImageIndex = 0;
 
-const firstImage = Array.isArray(a.images)
-  ? a.images[0]
-  : a.images;
+  currentArtworkIndex = idx;
+  currentImageIndex = 0;
 
-document.getElementById('lightboxArt').innerHTML =
-  `<img src="${firstImage}" alt="${a.title}" class="lightbox-image">`;
+  const firstImage = Array.isArray(a.images)
+    ? a.images[0]
+    : a.images;
+
+  document.getElementById('lightboxArt').innerHTML =
+    `<img src="${firstImage}" alt="${a.title}" class="lightbox-image">`;
 
   document.getElementById('lightboxTitle').textContent = a.title;
 
@@ -95,6 +118,13 @@ document.getElementById('lightboxArt').innerHTML =
   document.getElementById('lightbox').classList.add('open');
 
   document.body.style.overflow = 'hidden';
+
+  // Add the artwork name to the URL
+  if (updateURL) {
+    const slug = createArtworkSlug(a.title);
+    window.history.pushState(null, '', `#${slug}`);
+  }
+
 }
 function changeImage(direction) {
   const artwork = artworks[currentArtworkIndex];
@@ -120,6 +150,21 @@ function closeLightbox(e) {
   if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
+  }
+}
+
+// Open artwork automatically when a specific artwork URL is visited
+function openArtworkFromURL() {
+  const slug = window.location.hash.substring(1);
+
+  if (!slug) return;
+
+  const artworkIndex = artworks.findIndex(
+    artwork => createArtworkSlug(artwork.title) === slug
+  );
+
+  if (artworkIndex !== -1) {
+    openLightbox(artworkIndex, false);
   }
 }
 

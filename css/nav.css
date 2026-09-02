@@ -1,7 +1,7 @@
 
 /* ── NAV ── */
 nav {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -80,9 +80,6 @@ nav.scrolled {
   height: 2px;
   background: #ffffff;
   border-radius: 2px;
-}
-body {
-  padding-top: 170px;
 }
 
 /* ── MOBILE MENU ── */

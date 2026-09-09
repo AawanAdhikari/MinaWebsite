@@ -1,7 +1,10 @@
 [
    {
   "title": "Dreamfyre",
-  "images": "images/Everose.jpg",
+  "images": [
+      "images/Dreamfyre/Dreamfyre.jpg",
+      "images/Dreamfyre/Dreamfyre2.jpg" 
+    ],
   "year": "2026",
   "medium": "25x30cm Acrylic on canvas",
   "textColor": "white",
